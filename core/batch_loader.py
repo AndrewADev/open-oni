@@ -145,6 +145,7 @@ class BatchLoader(object):
         try:
             # build a Batch object for the batch location
             batch = self._get_batch(batch_name, batch_source, create=True)
+            # AA NOTE: This is more than a 'sanity check', and actually sets the value of validated_batch_file - talk about side-effects!
             self._sanity_check_batch(batch)
 
             # stash it away for processing later on

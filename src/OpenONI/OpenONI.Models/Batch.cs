@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.IO;
 
 namespace OpenONI.Models
 {
@@ -18,13 +17,27 @@ namespace OpenONI.Models
         public string ValidatedBatchFile { get; set; }
 
         //awardee = models.ForeignKey('Awardee', related_name='batches', null=True, on_delete = models.CASCADE)
-        public double AwardeeId { get; set; }
+        public string AwardeeId { get; set; }
 
         //source = models.CharField(max_length=4096, null=True)
         public string Source { get; set; }
 
         //sitemap_indexed = models.DateTimeField(auto_now_add=False, null=True)
         public DateTime SitemapIndexed { get; set; }
+
+
+        public string StorageUrl
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Source))
+                {
+                    return  Path.Combine(Source, "data");
+                }
+                return string.Empty;
+            }
+            
+        }
 
         // TODO: Several methods
     }
