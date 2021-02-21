@@ -26,3 +26,10 @@ onisite/plugins/*
 # Ignore Docker overrides
 /docker-compose.override.yml
 .env
+node_modules
+
+# Cypress - for frontend & e2e testing
+cypress/integration/examples
+cypress/fixtures/example.json
+cypress/videos
+cypress/screenshots
