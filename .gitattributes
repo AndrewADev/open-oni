@@ -1,0 +1,4 @@
+# Prevent introducing CRLF (all files) on checkout (doesn't
+# play well when Docker needs to read bash scripts, 
+# for instance)
+* -text eol=lf
