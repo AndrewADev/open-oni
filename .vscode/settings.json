@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "**/core/**/*.html": "jinja-html",
+        "**/themes/**/*.html": "jinja-html"
+    }
+}
