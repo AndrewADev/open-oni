@@ -1,3 +1,10 @@
+// TODO: conditional registration or local state of some kind? (we don't always need click handling)
+const clickHandler = ({ eventSource, position }) => {
+    const viewportPoint = eventSource.viewport.pointFromPixel(position);
+    const imagePoint = eventSource.viewport.viewportToImageCoordinates(viewportPoint);
+    console.info('image point:', imagePoint);
+}
+
 (function($) {
     var page_url;
     var coordinates_url;
@@ -138,6 +145,9 @@
         viewer.addHandler("open", resizePrint);
         viewer.addHandler("animation-finish", resizePrint);
         viewer.addHandler("animation-start", disablePrint);
+        // TODO: how to make this 'stateful' in that it only registers/responds after user has 
+        // clicked "clip" and chosen 'crop'
+        viewer.addHandler("canvas-click", clickHandler);
 
         $("#pageNum").change(function() {
             page_url = $("#pageNum").val();
