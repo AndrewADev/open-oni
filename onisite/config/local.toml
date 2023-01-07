@@ -1,0 +1,25 @@
+
+[site]
+# TODO: change this back to defaults
+title = "TOML Config"
+project.name = "Proof of Concept of TOML-based setup"
+
+[site.email]
+# 'From' address on general emails sent by Django:
+# If sending email from different server, replace `@' + url.hostname` with host.
+default_from.address = 'YOUR_PROJECT_NAME_ABBREVIATION-no-reply@'
+# default_from.host = "your-different-host.org.edu"
+
+# Space at the end of EMAIL_SUBJECT_PREFIX intentional
+# to separate subject from prefix.
+subject_prefix = '[YOUR_PROJECT_NAME_ABBREVIATION] '
+
+[server]
+# Number of processes in system run queue averaged over last minute beyond which
+# Open ONI will return a 'Server Too Busy' response. If unsure, leave at default.
+# Requires core.middleware.TooBusyMiddleware in MIDDLEWARE.
+too_busy_load_average = 64
+
+[database]
+# Keep database connections open until idle for this many seconds
+conn_max_age = 30

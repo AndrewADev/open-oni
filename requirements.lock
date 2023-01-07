@@ -25,3 +25,4 @@ six==1.15.0
 sqlparse==0.4.1
 urllib3==1.25.11
 worldcat==0.3.6
+tomli==1.1.0
